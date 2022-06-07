@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Hello</title>
+    <script>
+        document.getElementById("title").innerHTML = "欢迎您," + "{{ name }}"
+    </script>
+</head>
+<body>
+<script>
+    function submitting() {
+        var code = document.getElementById("hc").value
+        document.getElementById("goto").href = "http://127.0.0.1:5000/submit/" + "{{ name }}" + "/" + "{{ password }}" + "/"
+            + code.toString()
+        document.getElementById("goto").click()
+    }
+</script>
+<label>
+    Homework code:<input placeholder="像2331这样的作业码" id="hc">
+    <button onclick="submitting()">提交</button>
+    <a href="index.html" hidden id="goto"></a>
+</label>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script>
+        function sending() {
+            var urn = document.getElementById("usrname").value
+            var pwd = document.getElementById("password").value
+            document.getElementById("go").href = "http://127.0.0.1:5000/admin/" + urn + "/" + pwd
+            document.getElementById("go").click()
+        }
+    </script>
+</head>
+<body>
+<label>
+    用户名:
+    <input id="usrname">
+    <br>
+    密码:
+    <input id="password">
+</label>
+<button onclick="sending()">提交</button>
+<a href="index.html" hidden id="go"></a>
+</body>
+</html>

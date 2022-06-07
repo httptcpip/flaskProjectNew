@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你登记了你的作业</title>
+    <script>
+        const usrname = "{{ usrname }}";
+        const passwd = {{ password }};
+        const homework_code = "{{ hwc }}";
+        console.log(usrname)
+        console.log(passwd)
+
+        function back() {
+            document.getElementById("back").href = "http://127.0.0.1:5000/admin/" + usrname + "/" + passwd.toString();
+            document.getElementById("back").click();
+        }
+
+        function subject_Al() {
+            var subject;
+            switch (homework_code.slice(0, 1)) {
+                case "1":
+                    subject = "科目:语文";
+                    break;
+                case "2":
+                    subject = "科目:数学";
+                    break;
+                case "3":
+                    subject = "科目:英语";
+                    break
+                default:
+                    subject = undefined
+                    break
+            }
+            document.getElementById("subject").innerText = subject;
+        }
+
+        function type_Al() {
+            var type__;
+            switch (homework_code.slice(1, 2)) {
+                case "1":
+                    type__ = "类型:作业本";
+                    break;
+                case "2":
+                    type__ = "类型:大本";
+                    break;
+                case "3":
+                    type__ = "类型:记事本";
+                    break;
+                case "4":
+                    type__ = "类型:小条(默写)";
+                    break;
+                case "5":
+                    type__ = "其他";
+                    break;
+                default:
+                    break;
+            }
+            document.getElementById("type").innerText = type__;
+        }
+
+        // initialization
+        function init_Client() {
+            subject_Al();
+            type_Al();
+        }
+    </script>
+</head>
+<body>
+<button onclick="back()">回到个人主页</button>
+<button>撤销登记</button>
+<table>
+    <tr>
+        <th>你的作业</th>
+    </tr>
+    <tr>
+        <td id="subject">科目:</td>
+        <td id="type">类型:</td>
+    </tr>
+</table>
+<script>
+    init_Client();
+</script>
+<a id="back" hidden href="admin.html"></a>
+</body>
+</html>

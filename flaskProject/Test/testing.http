@@ -1,0 +1,15 @@
+### Test Admin
+GET http://127.0.0.1:5000
+Accept: application/json
+
+### Test loading
+GET http://127.0.0.1:5000/loading.html
+Accept: application/json
+
+### Test User Page
+GET http://127.0.0.1:5000/admin/admin/123456
+Accept: application/json
+
+### Test Submit Page
+GET http://127.0.0.1:5000/submit/admin/123456/2311
+Accept: application/json
