@@ -1,9 +1,8 @@
-import distutils.config
+import time
 
-from flask import Flask, render_template
 import flask.config
 import pymysql
-import time
+from flask import Flask, render_template
 
 app = Flask(__name__)
 app.config.from_object(flask.config)
